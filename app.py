@@ -11,11 +11,12 @@ responses = []
 
 @app.route('/')
 def go_home():
+    '''renders the survey form, home page'''
     return render_template('home.html', survey=satisfaction_survey)
 
 @app.route('/questions/<int:index>')
 def get_question(index):
-
+    '''directs user to next question, and handles any attempts at visiting pages user are not supposed to access'''
     if len(responses) == len(satisfaction_survey.questions):
         flash("You've already completed the survey!", 'success')
         return redirect('/thanks')
@@ -29,7 +30,7 @@ def get_question(index):
 
 @app.route('/answer', methods=['POST'])
 def handle_post():
-  
+  '''append answer given to responses, and redirect to next question, or thanks page'''
     answer = request.form['question']
     responses.append(answer)
     i = len(responses)
@@ -41,6 +42,7 @@ def handle_post():
 
 @app.route('/thanks')
 def handle_thanks():
+    '''renders the thanks page'''
     return render_template('thanks.html',responses=responses)
 
 # do an if len(response) less than list of questions, redirect to next q page, else redirect to thanks page

@@ -6,10 +6,12 @@
 
     {%for survey in surveys.keys()%}
     <div>
-        <input type="radio" name="survey" id="{{survey.title}}" value="{{survey}}">
-        <label for="{{survey.title}}">{{surveys[survey].title}}</label>
+        <input type="radio" name="survey" id="{{survey}}" value="{{survey}}">
+        <label for="{{survey}}">{{surveys[survey].title}}</label>
     </div>
     {%endfor%}
     <button class="button">Submit</button>
 </form>
 {%endblock%}
+
+<!-- surveys[survey].title -->

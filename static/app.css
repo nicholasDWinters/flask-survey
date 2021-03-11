@@ -2,12 +2,24 @@
     background-color: lightgreen;
     font-size: 1.5em;
     border: 5%;
-    border: 2px solid green
+    padding: 10px 0px 10px 50px;
+    
 }
 
 .error {
     background-color: lightcoral;
     font-size: 1.5em;
     border-radius: 5%;
-border: 2px solid red
+    padding: 10px 0px 10px 50px;
+    
+}
+
+.button {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.questionsAndAnswers {
+    font-size: 18px;
+    margin-left: 20px;
 }

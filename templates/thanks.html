@@ -4,5 +4,8 @@
 
 <h1>Thank you for taking our survey!</h1>
 
-
+{%for response in session['responses']%}
+<p class="questionsAndAnswers"><b>{{survey.questions[(session['responses'].index(response))].question}}</b> {{response}}
+</p>
+{%endfor%}
 {%endblock%}

@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block title%}Survey Selection{%endblock%}
+{%block content%}
+<form action="/survey" method="POST">
+    <h1>Survey Options</h1>
+
+    {%for survey in surveys.keys()%}
+    <div>
+        <input type="radio" name="survey" id="{{survey.title}}" value="{{survey}}">
+        <label for="{{survey.title}}">{{surveys[survey].title}}</label>
+    </div>
+    {%endfor%}
+    <button class="button">Submit</button>
+</form>
+{%endblock%}
